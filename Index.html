@@ -8,9 +8,15 @@
 <script src="Nostalgi.renderer.js"></script>
 <script src="Nostalgi.io.js"></script>
 <script type="text/javascript">
-
+	var scene;
+	var renderer;
     function webGLStart() {
-        var canvas = document.getElementById("viewport1");
+    	renderer = new NOSTALGI.GL.Renderer('viewport1');
+    	renderer.init();
+    	
+    	scene = new NOSTALGI.Scene();
+        scene.initScene();
+		
     }
 
 </script>

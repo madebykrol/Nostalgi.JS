@@ -25,14 +25,20 @@ NOSTALGI.Actor.prototype = Object.create(NOSTALGI.Object.prototype);
  * They have physical representation in the world, with collision detection etc.
  */
 NOSTALGI.Pawn = function () {
-		NOSTALGI.Actor.call(this)
+		NOSTALGI.Actor.call(this);
 };
 NOSTALGI.Pawn.prototype = Object.create(NOSTALGI.Actor.prototype);
 
 
 NOSTALGI.Scene = function () {
+	
 	var graph = {};
 	
+	this.initScene = function () {
+		
+	}
+	
+	NOSTALGI.Object.call(this);
 }
 
 /**
