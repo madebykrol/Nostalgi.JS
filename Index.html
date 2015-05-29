@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Nostalgi.JS</title>
-<script src="Nostalgi.js"></script>
-<script src="Nostalgi.net.js"></script>
-<script src="Nostalgi.renderer.js"></script>
-<script src="Nostalgi.io.js"></script>
+<script src="https://github.com/toji/gl-matrix/blob/master/dist/gl-matrix-min.js"></script>
+<script src="lib/Nostalgi.js"></script>
+<script src="lib/Nostalgi.math.js"></script>
+<script src="lib/Nostalgi.net.js"></script>
+<script src="lib/Nostalgi.renderer.js"></script>
+<script src="lib/Nostalgi.io.js"></script>
+<script src="lib/Nostalgi.game.js"></script>
+<script src="src/Example.js"></script>
 <script type="text/javascript">
 	var scene;
 	var renderer;
@@ -16,9 +20,14 @@
     	
     	scene = new NOSTALGI.Scene();
         scene.initScene();
-		
+        
+        var playerController = new EXAMPLE.Controller.FirstPersonController();
+        playerController.initController();
+        var player = new NOSTALGI.Pawn();
+        player.setController(playerController);
+        
+        scene.spawnActor(player, new NOSTALGI.Math.Vector3(0.0, 0.0, 0.0));
     }
-
 </script>
 </head>
 	<body onload="webGLStart();">
